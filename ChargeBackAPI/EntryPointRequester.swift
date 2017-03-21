@@ -10,10 +10,13 @@ import Foundation
 
 class EntryPointRequester: EndpointRequester {
 
+    typealias DataReturnedInRequest = ChargeBackAPI.Actions
     var currentTask: URLSessionTask?
     var action: ChargeBackAPI.Actions
-    var completion: ((ChargeBackAPI.Actions) -> Void)?
-    init(action: ChargeBackAPI.Actions) {
+    var completion: ((DataReturnedInRequest) -> Void)?
+    var postCompletion: ((Bool) -> Void)?
+
+    required init(action: ChargeBackAPI.Actions) {
         self.action = action
     }
 

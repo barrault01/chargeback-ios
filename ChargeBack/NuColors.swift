@@ -10,19 +10,23 @@ import UIKit
 
 extension UIColor {
     class var nuTitle: UIColor {
-        return #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
+        return #colorLiteral(red: 0.431372549, green: 0.168627451, blue: 0.4666666667, alpha: 1)
     }
 
     class var nuText: UIColor {
-        return #colorLiteral(red: 0.431372549, green: 0.168627451, blue: 0.4666666667, alpha: 1)
+        return #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
     }
 
     class var nuHint: UIColor {
         return #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
     }
 
-    class var nuBackground: UIColor {
+    class var nuViewBackground: UIColor {
         return #colorLiteral(red: 0.9921568627, green: 0.9921568627, blue: 0.9921568627, alpha: 1)
+    }
+
+    class var nuBackground: UIColor {
+        return #colorLiteral(red: 0.3294117647, green: 0.3333333333, blue: 0.337254902, alpha: 1)
     }
 
     class var nuGreen: UIColor {

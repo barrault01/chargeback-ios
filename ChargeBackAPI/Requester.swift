@@ -23,7 +23,8 @@ struct Requester {
         return making(request: req, parser: parser)
     }
 
-    static private func making(request: URLRequest, parser: @escaping ([String: Any]) -> Void) -> URLSessionDataTask? {
+    static private func making(request: URLRequest,
+                               parser: @escaping ([String: Any]) -> Void) -> URLSessionDataTask? {
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, response, error) in
             if let response = response {
@@ -38,6 +39,7 @@ struct Requester {
             }
 
         }
+        task.resume()
         return task
     }
 
@@ -63,7 +65,7 @@ struct Requester {
         return request
     }
 
-   static private func parseData(data: Data?) -> [String: Any]? {
+   static fileprivate func parseData(data: Data?) -> [String: Any]? {
         guard let data = data else { return nil }
         do {
             let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]
@@ -73,4 +75,44 @@ struct Requester {
             return nil
         }
     }
+}
+
+// MARK: Mocked Helper
+extension Requester {
+
+    static func requesterBundle() -> Bundle {
+        let bundle = Bundle(for: ChargebackRequester.self)
+        return bundle
+    }
+
+    static func pathForJsonFile(with name: String) -> String? {
+        let bundle = requesterBundle()
+        guard let path = bundle.path(forResource: name, ofType: "json") else {
+            return nil
+        }
+        return path
+    }
+
+    static func urlForPathOfJsonFile(with name: String) -> URL? {
+        if let path = pathForJsonFile(with: name) {
+            return URL(fileURLWithPath: path)
+        }
+        return nil
+    }
+
+    static func mockedJSON(with name: String) -> Data? {
+        if let url = urlForPathOfJsonFile(with: name) {
+            let jsonData = try? Data(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
+            return jsonData
+        }
+        return nil
+    }
+
+    static func mockedEnpoint(jsonName: String, parser: @escaping ([String: Any]) -> Void) {
+        if let data = mockedJSON(with: jsonName),
+            let json = self.parseData(data: data) {
+            parser(json)
+        }
+    }
+
 }

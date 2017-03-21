@@ -10,13 +10,40 @@ import Foundation
 
 class ChargebackRequester: EndpointRequester {
 
+    typealias DataReturnedInRequest = ChargeBack
     var currentTask: URLSessionTask?
     var action: ChargeBackAPI.Actions
-    var completion: ((ChargeBack) -> Void)?
-
-    init(action: ChargeBackAPI.Actions) {
+    var completion: ((DataReturnedInRequest) -> Void)?
+    var postCompletion: ((Bool) -> Void)?
+    var chargeBackParameters: (reasons: [(String, Bool)], message: String)?
+    required init(action: ChargeBackAPI.Actions) {
         self.action = action
     }
+
+    func sendChargeBack(reasons: [(String, Bool)], message: String) {
+        chargeBackParameters = (reasons: reasons, message: message)
+        doPost()
+    }
+
+    func parameters() -> [String : Any]? {
+        if let chargeBackParameters = self.chargeBackParameters {
+            let message = chargeBackParameters.message
+            var params = [String: Any]()
+            params["comment"] = message
+            var reasons = [[String: Any]]()
+            for reason in chargeBackParameters.reasons {
+                var reasonToAdd = [String: Any]()
+                reasonToAdd["id"] = reason.0
+                reasonToAdd["response"] = reason.1
+                reasons.append(reasonToAdd)
+            }
+            params["reason_details"] = reasons
+            return params
+        }
+
+        return nil
+    }
+
 
     func parseJson(json: [String: Any]) {
         guard let links = json["links"] as? [String: Any] else { return }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChargeBack
 
 class ViewController: UIViewController {
 
@@ -18,6 +19,29 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func didClickOnChargeBack(_ sender: UIButton) {
+        loadChargeBack(viewController: self)
+    }
+
+}
+
+func loadChargeBack(viewController: UIViewController) {
+
+    HUD.show(.progress)
+    let navigationCtrl = Storyboards.ChargeBack.instantiateInitialViewController()
+    if let chargeBack = navigationCtrl.viewControllers.first as? NoticeViewController {
+        let entryPoint = EntryPointRequester(action: .entry)
+        entryPoint.completion = { action in
+            chargeBack.action = action
+            chargeBack.rootViewController = viewController
+            DispatchQueue.main.async {
+                HUD.hide()
+                viewController.present(chargeBack, animated: true, completion: nil)
+            }
+        }
+        let _ = entryPoint.doGet()
     }
 
 }

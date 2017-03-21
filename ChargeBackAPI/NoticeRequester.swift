@@ -10,13 +10,16 @@ import Foundation
 
 class NoticeRequester: EndpointRequester {
 
+    typealias DataReturnedInRequest = Notice
     var currentTask: URLSessionTask?
     var action: ChargeBackAPI.Actions
-    var completion: ((Notice) -> Void)?
-    init(action: ChargeBackAPI.Actions) {
+    var completion: ((DataReturnedInRequest) -> Void)?
+    var postCompletion: ((Bool) -> Void)?
+
+    required init(action: ChargeBackAPI.Actions) {
         self.action = action
     }
-
+    
     func parseJson(json: [String: Any]) {
         guard let links = json["links"] as? [String: Any] else { return }
         let possibleActions = parseLinks(json: links)

@@ -10,7 +10,7 @@ import Foundation
 
 struct ChargeBack {
     var comment: String
-    var id: String
+    var id: String // swiftlint:disable:this variable_name
     var title: String
     var autoblock: Bool
     var reasons: [Reason]

@@ -1,1 +1,7 @@
-{"links":{"notice":{"href":"https://nu-mobile-hiring.herokuapp.com/notice"}}}
+{
+    "links": {
+        "notice": {
+            "href": "https://nu-mobile-hiring.herokuapp.com/notice"
+        }
+    }
+}

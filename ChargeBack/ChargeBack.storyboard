@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JbD-55-AA9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notice View Controller-->
+        <scene sceneID="as2-qH-lYu">
+            <objects>
+                <viewController id="crE-vx-FuF" customClass="NoticeViewController" customModule="ChargeBack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yB0-8y-hVF"/>
+                        <viewControllerLayoutGuide type="bottom" id="BMc-H4-JGY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Suk-ru-UeV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWu-M6-YJQ" customClass="NoticeView" customModule="ChargeBack" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BMc-H4-JGY" firstAttribute="top" secondItem="zWu-M6-YJQ" secondAttribute="bottom" id="Iff-ZI-6AH"/>
+                            <constraint firstItem="zWu-M6-YJQ" firstAttribute="top" secondItem="Suk-ru-UeV" secondAttribute="top" id="fC5-pb-wzJ"/>
+                            <constraint firstItem="zWu-M6-YJQ" firstAttribute="leading" secondItem="Suk-ru-UeV" secondAttribute="leading" id="qVj-KC-z7F"/>
+                            <constraint firstAttribute="trailing" secondItem="zWu-M6-YJQ" secondAttribute="trailing" id="sXb-zX-g2A"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WJZ-0E-oP2"/>
+                    <connections>
+                        <outlet property="theView" destination="zWu-M6-YJQ" id="DqX-z9-LuN"/>
+                        <outlet property="view" destination="Suk-ru-UeV" id="wdk-EV-Yzr"/>
+                        <segue destination="mWs-J3-9mW" kind="show" identifier="presentChargeBack" animates="NO" id="2rd-oZ-O6I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCu-oT-OH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023.2" y="55.322338830584712"/>
+        </scene>
+        <!--Charge Back View Controller-->
+        <scene sceneID="7uL-8A-G0h">
+            <objects>
+                <viewController id="mWs-J3-9mW" customClass="ChargeBackViewController" customModule="ChargeBack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p93-l2-H7w"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vql-z0-R3U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DSc-Rw-v6u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyZ-6o-cGx" customClass="ChargeBackView" customModule="ChargeBack" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SyZ-6o-cGx" firstAttribute="top" secondItem="DSc-Rw-v6u" secondAttribute="top" id="0DP-sh-5sj"/>
+                            <constraint firstAttribute="bottom" secondItem="SyZ-6o-cGx" secondAttribute="bottom" id="YgF-77-asO"/>
+                            <constraint firstItem="SyZ-6o-cGx" firstAttribute="leading" secondItem="DSc-Rw-v6u" secondAttribute="leading" id="myz-0y-duN"/>
+                            <constraint firstAttribute="trailing" secondItem="SyZ-6o-cGx" secondAttribute="trailing" id="nY5-Tr-SXB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="theView" destination="SyZ-6o-cGx" id="sqy-Wt-oes"/>
+                        <outlet property="view" destination="DSc-Rw-v6u" id="4Vz-GV-Y9v"/>
+                        <segue destination="GPw-0l-IeP" kind="show" identifier="presentResult" animates="NO" id="AIZ-Iv-wW8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jic-o9-ABB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3044" y="54.422788605697157"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="CMd-mB-O90">
+            <objects>
+                <viewController id="GPw-0l-IeP" customClass="ResultViewController" customModule="ChargeBack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dvz-KI-pt8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xwc-Du-gvd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8hn-8O-cKs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mb6-qM-sSj" customClass="ResultView" customModule="ChargeBack" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mb6-qM-sSj" firstAttribute="leading" secondItem="8hn-8O-cKs" secondAttribute="leading" id="DrS-Bd-vUC"/>
+                            <constraint firstItem="mb6-qM-sSj" firstAttribute="top" secondItem="8hn-8O-cKs" secondAttribute="top" id="LMZ-6l-Jrc"/>
+                            <constraint firstAttribute="trailing" secondItem="mb6-qM-sSj" secondAttribute="trailing" id="pHx-Qo-L3x"/>
+                            <constraint firstAttribute="bottom" secondItem="mb6-qM-sSj" secondAttribute="bottom" id="zcg-ww-k7J"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="theView" destination="mb6-qM-sSj" id="nDg-0e-N4B"/>
+                        <outlet property="view" destination="8hn-8O-cKs" id="0do-Fd-hsl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sii-n0-gfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3880.8000000000002" y="51.724137931034484"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kyv-W9-y9n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JbD-55-AA9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KyO-LY-agh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="crE-vx-FuF" kind="relationship" relationship="rootViewController" id="yds-ua-KOa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLr-AW-AsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="55.322338830584712"/>
+        </scene>
+    </scenes>
+</document>

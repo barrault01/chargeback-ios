@@ -19,8 +19,8 @@ public struct ChargeBackAPI {
             switch string {
             case "notice": self = .notice
             case "chargeback": self = .chargeback
-            case "card_block": self = .card_block
-            case "card_unblock": self = .card_unblock
+            case "block_card": self = .card_block
+            case "unblock_card": self = .card_unblock
             default: return nil
             }
         }

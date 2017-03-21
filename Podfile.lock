@@ -1,0 +1,24 @@
+PODS:
+  - ChargeBack (1.0.0):
+    - NibDesignable (= 3.0.0)
+    - PKHUD (= 4.2.0)
+  - NibDesignable (3.0.0)
+  - PKHUD (4.2.0)
+
+DEPENDENCIES:
+  - ChargeBack (from `.`)
+  - NibDesignable (= 3.0.0)
+  - PKHUD
+
+EXTERNAL SOURCES:
+  ChargeBack:
+    :path: "."
+
+SPEC CHECKSUMS:
+  ChargeBack: db1d426776f64eac15048b233040fe4e860627f7
+  NibDesignable: 6ccf1e54135cb05be0a78f803b9a8d78125a7d6d
+  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
+
+PODFILE CHECKSUM: 8f88b2d89cbbff8c2373d5cd450778f9d9deb39d
+
+COCOAPODS: 1.2.0

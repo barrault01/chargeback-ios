@@ -10,16 +10,30 @@ import Foundation
 
 protocol EndpointRequester: class {
 
+    associatedtype DataReturnedInRequest
     var currentTask: URLSessionTask? { get set }
     var action: ChargeBackAPI.Actions { get set }
+    var completion: ((DataReturnedInRequest) -> Void)? { get set }
 
+    var postCompletion: ((Bool) -> Void)? { get set }
     func parseJson(json: [String: Any])
+    func parsePostJson(json: [String: Any])
     func parameters() -> [String: Any]?
+    init(action: ChargeBackAPI.Actions)
 }
 
 extension EndpointRequester {
 
     func doGet() {
+        doGet(mockedFileName: nil)
+    }
+
+    func doGet(mockedFileName: String?) {
+
+        if let mockedFileName = mockedFileName {
+            Requester.mockedEnpoint(jsonName: mockedFileName, parser: self.parseJson)
+            return
+        }
         guard let endpoint = action.endpoint() else {
             assertionFailure("this sould not be called because we don't know this endpoint yet")
             return
@@ -28,13 +42,22 @@ extension EndpointRequester {
     }
 
     func doPost() {
+        doPost(mockedFileName: nil)
+    }
+
+    func doPost(mockedFileName: String?) {
+
+        if let mockedFileName = mockedFileName {
+            Requester.mockedEnpoint(jsonName: mockedFileName, parser: self.parsePostJson)
+            return
+        }
         guard let endpoint = action.endpoint() else {
             assertionFailure("this sould not be called because we don't know this endpoint yet")
             return
         }
         currentTask = Requester.makingPostRequest(urlInString: endpoint,
                                                   params: self.parameters(),
-                                                  parser: self.parseJson)
+                                                  parser: self.parsePostJson)
     }
 
     func parseLinks(json: [String: Any]) -> [ChargeBackAPI.Actions] {
@@ -56,7 +79,14 @@ extension EndpointRequester {
         return actions
     }
 
-    func parameters() -> [String: Any]? {
+    func parsePostJson(json: [String: Any]) {
+        guard let status = json["status"] as? String  else { return }
+        if let postCompletion = postCompletion {
+            postCompletion(status == "Ok")
+        }
+    }
+
+     func parameters() -> [String: Any]? {
         return nil
     }
 }
