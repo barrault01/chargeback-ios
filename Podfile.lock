@@ -4,21 +4,24 @@ PODS:
     - PKHUD (= 4.2.0)
   - NibDesignable (3.0.0)
   - PKHUD (4.2.0)
+  - SwiftLint (0.16.1)
 
 DEPENDENCIES:
   - ChargeBack (from `.`)
   - NibDesignable (= 3.0.0)
   - PKHUD
+  - SwiftLint
 
 EXTERNAL SOURCES:
   ChargeBack:
     :path: "."
 
 SPEC CHECKSUMS:
-  ChargeBack: db1d426776f64eac15048b233040fe4e860627f7
+  ChargeBack: dc4db6a74b16e87fbbef3afd2033326c10d19b1c
   NibDesignable: 6ccf1e54135cb05be0a78f803b9a8d78125a7d6d
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
+  SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
 
-PODFILE CHECKSUM: 8f88b2d89cbbff8c2373d5cd450778f9d9deb39d
+PODFILE CHECKSUM: 92ea5393085d475f01b95b2dc13bc6dffb888219
 
 COCOAPODS: 1.2.0
