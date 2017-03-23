@@ -1,7 +1,7 @@
 
-declared_trivial = github.pr_title.include? "#trivial"
+declared_trivial = bitbucket_cloud.pr_title.include? "#trivial"
 
-warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
+warn("PR is classed as Work in Progress") if bitbucket_cloud.pr_title.include? "[WIP]"
 
 warn("Big PR") if git.lines_of_code > 500
 
@@ -11,7 +11,7 @@ made_changes_in_tests = git.modified_files.include?("*Tests.swift")
 warn("No changes in Tests") if !made_changes_in_tests
 
 
-message("@barrault01 a PR to Review!!") if github.pr_author != "barrault01" 
+message("@barrault01 a PR to Review!!") if bitbucket_cloud.pr_author != "barrault01" 
 
 require 'fastlane'
 last_tag = Fastlane::OneOff.run(action: "last_git_tag",parameters:{})
