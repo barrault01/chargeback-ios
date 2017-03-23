@@ -19,7 +19,6 @@ workflows:
     steps:
     - activate-ssh-key@3.1.1:
         run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
-    - git-clone@3.4.2: {}
     - script@1.1.3:
         title: Do anything with Script step
     - certificate-and-profile-installer@1.8.4: {}
@@ -33,8 +32,5 @@ workflows:
         inputs:
         - lane: "$FASTLANE_LANE"
         - work_dir: "$FASTLANE_WORK_DIR"
-    - script:
-        inputs:
-        - content: bundle exec danger
 
     - deploy-to-bitrise-io@1.2.9: {}
