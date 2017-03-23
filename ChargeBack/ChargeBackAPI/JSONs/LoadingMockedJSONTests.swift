@@ -15,7 +15,7 @@ class LoadingMockedJSONTests: XCTestCase {
     let fileThatNotExisted = "unknow"
 
     func testBundleLoading() {
-        let value = Requester.requesterBundle()
+        let value = ChargeBackInstance.bundle()
         XCTAssertNotNil(value)
     }
 
