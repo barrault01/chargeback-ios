@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'git@bitbucket.org/antoinebarrault/nubank-chargeback-ios'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Antoine Barrault' => 'barrault01@gmail.com' }
-  s.source           = { :git => "git@bitbucket.org/antoinebarrault/nubank-chargeback-ios.git", :tag => s.version.to_s }
+  s.source           = { :git => "git@bitbucket.org:antoinebarrault/nubank-chargeback-ios.git", :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.2'
 

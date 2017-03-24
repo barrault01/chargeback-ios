@@ -15,12 +15,12 @@ class ChargebackRequester: EndpointRequester {
     var action: ChargeBackAPI.Actions
     var completion: ((DataReturnedInRequest) -> Void)?
     var postCompletion: ((Bool) -> Void)?
-    var chargeBackParameters: (reasons: [(String, Bool)], message: String)?
+    var chargeBackParameters: (reasons: [String: Bool], message: String)?
     required init(action: ChargeBackAPI.Actions) {
         self.action = action
     }
 
-    func sendChargeBack(reasons: [(String, Bool)], message: String) {
+    func sendChargeBack(reasons: [String: Bool], message: String) {
         chargeBackParameters = (reasons: reasons, message: message)
         doPost()
     }

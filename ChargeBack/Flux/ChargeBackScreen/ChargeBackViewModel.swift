@@ -66,7 +66,7 @@ class ChargeBackViewModel: ModelRequester {
 
     }
 
-    func goNextStep(reasons: [(String, Bool)]) {
+    func goNextStep(reasons: [String: Bool]) {
         guard  explicationText.characters.count >= minimumExplicationSize else {
             return
         }

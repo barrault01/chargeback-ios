@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		33A995683EF04A76A448BA38 /* Pods_ChargeBackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF37D70543EB9F9F306E4D0 /* Pods_ChargeBackTests.framework */; };
 		6C30DA471837CBD5C6C506A2 /* Pods_ChargeBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC9CFD050D27A11F4E6AB52 /* Pods_ChargeBack.framework */; };
+		8C0BF5411E855EFA00E6DD24 /* SwitchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C0BF5401E855EFA00E6DD24 /* SwitchView.xib */; };
+		8C693BF31E84790100C8ADF3 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C693BEF1E84790100C8ADF3 /* SwitchView.swift */; };
+		8C693BF91E847F6100C8ADF3 /* MultiSwitchViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C693BF81E847F6100C8ADF3 /* MultiSwitchViewContainer.swift */; };
 		8C7FFFE51E8361B600364535 /* KeyboardShowAndHideProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FFFE41E8361B600364535 /* KeyboardShowAndHideProtocol.swift */; };
 		8CE4E0FE1E82AE1100535C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4E0FD1E82AE1100535C6C /* AppDelegate.swift */; };
 		8CE4E1001E82AE1100535C6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4E0FF1E82AE1100535C6C /* ViewController.swift */; };
@@ -112,6 +115,9 @@
 		279D92C2C3F9A868FD8AF8FC /* Pods-ChargeBackDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChargeBackDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChargeBackDemo/Pods-ChargeBackDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		29323CE58DD476883EEB17FD /* Pods-ChargeBackDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChargeBackDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChargeBackDemoUITests/Pods-ChargeBackDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		33609A75C6E3692DED79F8B0 /* Pods-ChargeBack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChargeBack.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChargeBack/Pods-ChargeBack.release.xcconfig"; sourceTree = "<group>"; };
+		8C0BF5401E855EFA00E6DD24 /* SwitchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchView.xib; sourceTree = "<group>"; };
+		8C693BEF1E84790100C8ADF3 /* SwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
+		8C693BF81E847F6100C8ADF3 /* MultiSwitchViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiSwitchViewContainer.swift; path = MultiSwitchView/MultiSwitchViewContainer.swift; sourceTree = "<group>"; };
 		8C7FFFE41E8361B600364535 /* KeyboardShowAndHideProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardShowAndHideProtocol.swift; sourceTree = "<group>"; };
 		8CE4E0FB1E82AE1100535C6C /* ChargeBackDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargeBackDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE4E0FD1E82AE1100535C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +253,32 @@
 				8CEF3A111E82AF1E00A0C770 /* ChargeBackTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8C693BED1E8478AE00C8ADF3 /* LockerView */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF3A491E82AFFA00A0C770 /* LockerView.swift */,
+				8CEF3A4A1E82AFFA00A0C770 /* LockerView.xib */,
+			);
+			path = LockerView;
+			sourceTree = "<group>";
+		};
+		8C693BEE1E8478D400C8ADF3 /* SwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				8C0BF5401E855EFA00E6DD24 /* SwitchView.xib */,
+				8C693BEF1E84790100C8ADF3 /* SwitchView.swift */,
+			);
+			path = SwitchView;
+			sourceTree = "<group>";
+		};
+		8C693BF71E847F4600C8ADF3 /* MultiSwitchViewContainer */ = {
+			isa = PBXGroup;
+			children = (
+				8C693BF81E847F6100C8ADF3 /* MultiSwitchViewContainer.swift */,
+			);
+			name = MultiSwitchViewContainer;
 			sourceTree = "<group>";
 		};
 		8CE4E0FC1E82AE1100535C6C /* ChargeBackDemo */ = {
@@ -386,8 +418,9 @@
 				8CEF3A461E82AFFA00A0C770 /* ChargeBackView.xib */,
 				8CEF3A471E82AFFA00A0C770 /* ChargeBackViewController.swift */,
 				8CEF3A481E82AFFA00A0C770 /* ChargeBackViewModel.swift */,
-				8CEF3A491E82AFFA00A0C770 /* LockerView.swift */,
-				8CEF3A4A1E82AFFA00A0C770 /* LockerView.xib */,
+				8C693BF71E847F4600C8ADF3 /* MultiSwitchViewContainer */,
+				8C693BEE1E8478D400C8ADF3 /* SwitchView */,
+				8C693BED1E8478AE00C8ADF3 /* LockerView */,
 			);
 			path = ChargeBackScreen;
 			sourceTree = "<group>";
@@ -615,6 +648,7 @@
 				8CEF3A7B1E82AFFA00A0C770 /* ResultView.xib in Resources */,
 				8CEF3A661E82AFFA00A0C770 /* doChargeback.json in Resources */,
 				8CEF3A651E82AFFA00A0C770 /* chargeback.json in Resources */,
+				8C0BF5411E855EFA00E6DD24 /* SwitchView.xib in Resources */,
 				8CEF3A591E82AFFA00A0C770 /* Assets.xcassets in Resources */,
 				8CEF3A761E82AFFA00A0C770 /* NoticeView.xib in Resources */,
 			);
@@ -841,6 +875,7 @@
 				8CEF3A711E82AFFA00A0C770 /* ChargeBackViewModel.swift in Sources */,
 				8CEF3A751E82AFFA00A0C770 /* NoticeView.swift in Sources */,
 				8CEF3A6E1E82AFFA00A0C770 /* ChargeBackView.swift in Sources */,
+				8C693BF91E847F6100C8ADF3 /* MultiSwitchViewContainer.swift in Sources */,
 				8CEF3A771E82AFFA00A0C770 /* NoticeViewController.swift in Sources */,
 				8CEF3A621E82AFFA00A0C770 /* Requester.swift in Sources */,
 				8CEF3A701E82AFFA00A0C770 /* ChargeBackViewController.swift in Sources */,
@@ -850,6 +885,7 @@
 				8CEF3A631E82AFFA00A0C770 /* EntryPointRequester.swift in Sources */,
 				8CEF3A791E82AFFA00A0C770 /* NuColors.swift in Sources */,
 				8CEF3A5C1E82AFFA00A0C770 /* BlockCardRequester.swift in Sources */,
+				8C693BF31E84790100C8ADF3 /* SwitchView.swift in Sources */,
 				8CEF3A7D1E82AFFA00A0C770 /* ResultViewModel.swift in Sources */,
 				8CEF3A7F1E82AFFA00A0C770 /* ViewProtocols.swift in Sources */,
 				8CEF3A7E1E82AFFA00A0C770 /* Storyboards.swift in Sources */,
@@ -1011,7 +1047,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 279D92C2C3F9A868FD8AF8FC /* Pods-ChargeBackDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4F3EA6B935;
 				INFOPLIST_FILE = ChargeBackDemo/Info.plist;
@@ -1026,7 +1062,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1C72ECB30E7C5BB25DAB37E /* Pods-ChargeBackDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4F3EA6B935;
 				INFOPLIST_FILE = ChargeBackDemo/Info.plist;
@@ -1041,7 +1077,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29323CE58DD476883EEB17FD /* Pods-ChargeBackDemoUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = 4F3EA6B935;
 				INFOPLIST_FILE = ChargeBackDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1056,7 +1092,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA29F831AF815C5CE6DAA51C /* Pods-ChargeBackDemoUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = 4F3EA6B935;
 				INFOPLIST_FILE = ChargeBackDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1120,7 +1156,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 179032B34F50BD01B4E08D6F /* Pods-ChargeBackTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = 4F3EA6B935;
 				INFOPLIST_FILE = ChargeBackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1135,7 +1171,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1665AE419C10AFAD9987AE4 /* Pods-ChargeBackTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = 4F3EA6B935;
 				INFOPLIST_FILE = ChargeBackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

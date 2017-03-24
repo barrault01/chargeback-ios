@@ -34,3 +34,17 @@ workflows:
         - work_dir: "$FASTLANE_WORK_DIR"
 
     - deploy-to-bitrise-io@1.2.9: {}
+  secondary:
+    steps:
+    - script:
+        inputs:
+        - content: bundle install
+    - script:
+        inputs:
+        - content: bundle exec pod install
+    - script:
+        inputs:
+        - content: if [ `bundle exec pod repo | grep my-private-cocoapods-repository | wc -l` -lt 1 ]; then bundle exec pod repo add my-private-cocoapods-repository git@bitbucket.org:ant_one/my-private-cocoapods-repository.git; fi
+    - script:
+        inputs:
+        - content: bundle exec fastlane tag_and_pod

@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  ChargeBack: dc4db6a74b16e87fbbef3afd2033326c10d19b1c
+  ChargeBack: 168db32717b3d3330d6fcc9f065eb7dfcd25a510
   NibDesignable: 6ccf1e54135cb05be0a78f803b9a8d78125a7d6d
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
