@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwitchView">
+            <connections>
+                <outlet property="isSelectedSwitch" destination="SV6-ht-Jea" id="Ump-SH-Ivz"/>
+                <outlet property="label" destination="SBy-hc-Wim" id="QMS-qs-l1u"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yYG-Ew-TVF">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SBy-hc-Wim">
+                    <rect key="frame" x="16" y="323" width="286" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SV6-ht-Jea">
+                    <rect key="frame" x="310" y="318" width="51" height="31"/>
+                    <connections>
+                        <action selector="didChangeValue:" destination="-1" eventType="valueChanged" id="IlK-yw-1kY"/>
+                    </connections>
+                </switch>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SV6-ht-Jea" firstAttribute="centerY" secondItem="yYG-Ew-TVF" secondAttribute="centerY" id="9qk-uj-Md1"/>
+                <constraint firstAttribute="trailing" secondItem="SV6-ht-Jea" secondAttribute="trailing" constant="16" id="Cks-Ka-Wfz"/>
+                <constraint firstItem="SBy-hc-Wim" firstAttribute="leading" secondItem="yYG-Ew-TVF" secondAttribute="leading" constant="16" id="Lfg-d9-irP"/>
+                <constraint firstItem="SV6-ht-Jea" firstAttribute="leading" secondItem="SBy-hc-Wim" secondAttribute="trailing" constant="8" id="Up1-o1-Rt3"/>
+                <constraint firstItem="SBy-hc-Wim" firstAttribute="centerY" secondItem="yYG-Ew-TVF" secondAttribute="centerY" id="aZI-MR-kWW"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -28,7 +28,7 @@ def cocoapods
 {
     private_repo: "my-private-cocoapods-repository",
     private_repo_name: "my-private-cocoapods-repository",
-    private_repo_git_url: "git@bitbucket.org/ant_one/my-private-cocoapods-repository.git",
+    private_repo_git_url: "git@bitbucket.org:ant_one/my-private-cocoapods-repository.git",
     podspec: "./#{pod_name}.podspec",
     pod_name: "#{pod_name}"
 }

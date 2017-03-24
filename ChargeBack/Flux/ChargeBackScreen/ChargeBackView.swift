@@ -15,7 +15,7 @@ enum CardBlockState {
 
 class ChargeBackView: NibDesignable {
 
-    var clickedOnContinue: (([(String, Bool)]) -> Void)!
+    var clickedOnContinue: (([String: Bool]) -> Void)!
     var clickedOnCancel: ((Void) -> Void)!
     var updateText: ((String) -> Void)!
     var updateLocker: ((Void) -> Void)! {
@@ -25,16 +25,15 @@ class ChargeBackView: NibDesignable {
     }
 
     let heightForTitleConstant: CGFloat = 76.0
-    let heightForBlockAndSwitchConstant: CGFloat = 200.0
-
+    var reasons: [String: Bool] = [String: Bool]()
     @IBOutlet weak var lockerView: LockerView! {
         didSet {
             lockerView?.clickOnLock = updateLocker
         }
     }
-    @IBOutlet weak var heightForBlockAndSwitchConstraint: NSLayoutConstraint! {
+    @IBOutlet weak var heightForSwitchesConstraint: NSLayoutConstraint! {
         didSet {
-            heightForBlockAndSwitchConstraint.constant = heightForBlockAndSwitchConstant
+            heightForSwitchesConstraint.constant = 0.0
         }
     }
     @IBOutlet weak var heightForTitleConstraint: NSLayoutConstraint! {
@@ -42,9 +41,7 @@ class ChargeBackView: NibDesignable {
             heightForTitleConstraint.constant = heightForTitleConstant
         }
     }
-
     @IBOutlet weak var bottomOfScrollView: NSLayoutConstraint!
-
     @IBOutlet weak var title: UILabel! {
         didSet {
             title.textColor = .nuText
@@ -53,7 +50,6 @@ class ChargeBackView: NibDesignable {
             title.addGestureRecognizer(tapRecognizer)
         }
     }
-
     @IBOutlet weak var contentView: UIView! {
         didSet {
             contentView.backgroundColor = .nuViewBackground
@@ -76,17 +72,12 @@ class ChargeBackView: NibDesignable {
             cancelButton.tintColor = .nuCloseGray
         }
     }
-
-    func changeCardBlockState(state: CardBlockState) {
-         lockerView?.cardBlockState = state
-    }
-
     @IBOutlet weak var separatorBetweenSwitchesAndTitle: UIView! {
         didSet {
             separatorBetweenSwitchesAndTitle.backgroundColor = .nuDisabledGray
         }
     }
-    @IBOutlet weak var blockCardAndSwitchContainer: UIView!
+    @IBOutlet weak var switchesContainer: MultiSwitchViewContainer!
     @IBOutlet weak var separatorBetweenTextInputAndSwitches: UIView! {
         didSet {
             separatorBetweenTextInputAndSwitches.backgroundColor = .nuDisabledGray
@@ -109,7 +100,7 @@ class ChargeBackView: NibDesignable {
 
     @IBAction func didClickOnContinueButton(_ sender: Any) {
         self.endEditing(true)
-        clickedOnContinue([(String, Bool)]())
+        clickedOnContinue(self.reasons)
     }
 
     @IBAction func didClickOnCancel(_ sender: Any) {
@@ -117,12 +108,16 @@ class ChargeBackView: NibDesignable {
         clickedOnCancel()
     }
 
+    func changeCardBlockState(state: CardBlockState) {
+         lockerView?.cardBlockState = state
+    }
+
     func collapseView() {
-        self.heightForBlockAndSwitchConstraint.constant = 40 + 12
+        self.heightForSwitchesConstraint.constant = 0
     }
 
     func expandView() {
-        self.heightForBlockAndSwitchConstraint.constant = heightForBlockAndSwitchConstant
+        self.heightForSwitchesConstraint.constant = self.switchesContainer.heightForView(for: self.reasons.values.count)
     }
 
     func hidePlaceHolder(_ isHide: Bool) {
@@ -150,5 +145,10 @@ extension ChargeBackView: ConfigurableView {
         textInputView.isEditable = true
         title.text = data.title.uppercased()
         placeholderTextInputView.text = data.comment
+        self.reasons = switchesContainer.configure(with: data.reasons, updateBlock: { reasonId, value in
+                self.reasons[reasonId] = value
+        })
+        self.heightForSwitchesConstraint.constant = switchesContainer.heightForView(for: data.reasons.count)
+
     }
 }

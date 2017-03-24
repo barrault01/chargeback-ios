@@ -12,16 +12,16 @@
             <connections>
                 <outlet property="acceptButton" destination="uBr-88-acf" id="MnT-C6-7d8"/>
                 <outlet property="backgroundView" destination="iKg-nB-opL" id="Tib-45-gvp"/>
-                <outlet property="blockCardAndSwitchContainer" destination="2U9-yQ-JVF" id="0zv-xV-4zH"/>
                 <outlet property="bottomOfScrollView" destination="Jgx-t9-uBL" id="ST0-ws-pTD"/>
                 <outlet property="cancelButton" destination="gPg-jp-QWs" id="DbT-S5-fzh"/>
                 <outlet property="contentView" destination="HvQ-QH-w1a" id="AIL-Bd-4an"/>
-                <outlet property="heightForBlockAndSwitchConstraint" destination="05r-Io-Xcw" id="E2x-fB-x09"/>
+                <outlet property="heightForSwitchesConstraint" destination="05r-Io-Xcw" id="ISN-zh-zbJ"/>
                 <outlet property="heightForTitleConstraint" destination="Fds-j0-3MC" id="4jV-rn-XnG"/>
                 <outlet property="lockerView" destination="FjJ-fC-JTq" id="mYd-Fd-Zoc"/>
                 <outlet property="placeholderTextInputView" destination="9pA-bO-cpf" id="Oap-l4-Jsk"/>
                 <outlet property="separatorBetweenSwitchesAndTitle" destination="wWE-AU-egk" id="5Wy-DQ-uHU"/>
                 <outlet property="separatorBetweenTextInputAndSwitches" destination="EVX-X1-crz" id="fPW-kW-amK"/>
+                <outlet property="switchesContainer" destination="2U9-yQ-JVF" id="DHr-Lt-z9z"/>
                 <outlet property="textInputView" destination="Uh9-0T-6ZD" id="yep-TY-IiP"/>
                 <outlet property="title" destination="9DF-Ta-4JE" id="cik-GV-noy"/>
             </connections>
@@ -38,46 +38,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvQ-QH-w1a">
                     <rect key="frame" x="12" y="12" width="351" height="643"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWE-AU-egk">
-                            <rect key="frame" x="0.0" y="76" width="351" height="2"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="2" id="dFw-sV-n78"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVX-X1-crz">
-                            <rect key="frame" x="0.0" y="290" width="351" height="2"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="2" id="eDV-Zg-F7w"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2U9-yQ-JVF">
-                            <rect key="frame" x="0.0" y="90" width="351" height="200"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjJ-fC-JTq" customClass="LockerView" customModule="ChargeBack" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="40"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="uuz-Vm-1ym"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2U9-yQ-JVF" customClass="MultiSwitchViewContainer" customModule="ChargeBack" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="142" width="351" height="200"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="05r-Io-Xcw"/>
-                                <constraint firstAttribute="trailing" secondItem="FjJ-fC-JTq" secondAttribute="trailing" id="XIt-4B-MEl"/>
-                                <constraint firstItem="FjJ-fC-JTq" firstAttribute="leading" secondItem="2U9-yQ-JVF" secondAttribute="leading" id="Z2m-ST-CGe"/>
-                                <constraint firstItem="FjJ-fC-JTq" firstAttribute="top" secondItem="2U9-yQ-JVF" secondAttribute="top" id="xkk-aR-RXG"/>
                             </constraints>
                         </view>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pA-bO-cpf">
-                            <rect key="frame" x="0.0" y="292" width="351" height="291"/>
+                            <rect key="frame" x="0.0" y="344" width="351" height="239"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uh9-0T-6ZD">
-                            <rect key="frame" x="0.0" y="292" width="351" height="291"/>
+                            <rect key="frame" x="0.0" y="344" width="351" height="239"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -122,10 +96,32 @@
                                 <constraint firstItem="9DF-Ta-4JE" firstAttribute="leading" secondItem="S3L-F9-zEO" secondAttribute="leading" constant="16" id="wAH-Rx-D4g"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWE-AU-egk">
+                            <rect key="frame" x="0.0" y="76" width="351" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="dFw-sV-n78"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVX-X1-crz">
+                            <rect key="frame" x="0.0" y="342" width="351" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="eDV-Zg-F7w"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjJ-fC-JTq" customClass="LockerView" customModule="ChargeBack" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="78" width="351" height="64"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="3Vg-rL-DGM"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="wWE-AU-egk" firstAttribute="leading" secondItem="HvQ-QH-w1a" secondAttribute="leading" id="0Fa-TU-rdW"/>
+                        <constraint firstItem="FjJ-fC-JTq" firstAttribute="top" secondItem="wWE-AU-egk" secondAttribute="bottom" id="1Gv-Tu-fHJ"/>
                         <constraint firstItem="uBr-88-acf" firstAttribute="width" secondItem="gPg-jp-QWs" secondAttribute="width" id="2rb-Be-Zuc"/>
                         <constraint firstItem="gPg-jp-QWs" firstAttribute="leading" secondItem="HvQ-QH-w1a" secondAttribute="leading" id="2zj-sU-2Eb"/>
                         <constraint firstAttribute="trailing" secondItem="9pA-bO-cpf" secondAttribute="trailing" id="3mW-z4-qDb"/>
@@ -133,17 +129,19 @@
                         <constraint firstAttribute="bottom" secondItem="uBr-88-acf" secondAttribute="bottom" id="Dsi-sq-UJX"/>
                         <constraint firstItem="9pA-bO-cpf" firstAttribute="bottom" secondItem="Uh9-0T-6ZD" secondAttribute="bottom" id="J9C-bu-ftC"/>
                         <constraint firstItem="uBr-88-acf" firstAttribute="top" secondItem="Uh9-0T-6ZD" secondAttribute="bottom" id="Ni0-bs-1SP"/>
-                        <constraint firstItem="2U9-yQ-JVF" firstAttribute="top" secondItem="wWE-AU-egk" secondAttribute="bottom" constant="12" id="SKf-bv-bXZ"/>
                         <constraint firstItem="uBr-88-acf" firstAttribute="leading" secondItem="gPg-jp-QWs" secondAttribute="trailing" id="TM6-jS-Gjp"/>
                         <constraint firstAttribute="trailing" secondItem="2U9-yQ-JVF" secondAttribute="trailing" id="UPU-gE-qXJ"/>
                         <constraint firstItem="S3L-F9-zEO" firstAttribute="top" secondItem="HvQ-QH-w1a" secondAttribute="top" id="YGg-kt-kky"/>
+                        <constraint firstItem="FjJ-fC-JTq" firstAttribute="leading" secondItem="HvQ-QH-w1a" secondAttribute="leading" id="Yjh-BO-ai6"/>
                         <constraint firstAttribute="trailing" secondItem="EVX-X1-crz" secondAttribute="trailing" id="ZDu-dQ-eEc"/>
                         <constraint firstAttribute="trailing" secondItem="wWE-AU-egk" secondAttribute="trailing" id="ZNs-ia-pmN"/>
                         <constraint firstItem="wWE-AU-egk" firstAttribute="top" secondItem="S3L-F9-zEO" secondAttribute="bottom" id="bSk-AD-3MU"/>
+                        <constraint firstItem="2U9-yQ-JVF" firstAttribute="top" secondItem="FjJ-fC-JTq" secondAttribute="bottom" id="cGu-UL-j2b"/>
                         <constraint firstAttribute="trailing" secondItem="uBr-88-acf" secondAttribute="trailing" id="fH5-Oe-HOK"/>
                         <constraint firstItem="S3L-F9-zEO" firstAttribute="leading" secondItem="HvQ-QH-w1a" secondAttribute="leading" id="fLQ-NY-U5H"/>
                         <constraint firstItem="9pA-bO-cpf" firstAttribute="leading" secondItem="HvQ-QH-w1a" secondAttribute="leading" id="fUg-h6-2LR"/>
                         <constraint firstAttribute="trailing" secondItem="Uh9-0T-6ZD" secondAttribute="trailing" id="hSQ-cr-C3h"/>
+                        <constraint firstAttribute="trailing" secondItem="FjJ-fC-JTq" secondAttribute="trailing" id="ifr-Gz-GJ5"/>
                         <constraint firstItem="Uh9-0T-6ZD" firstAttribute="leading" secondItem="HvQ-QH-w1a" secondAttribute="leading" id="j4Y-aA-a2S"/>
                         <constraint firstItem="2U9-yQ-JVF" firstAttribute="leading" secondItem="HvQ-QH-w1a" secondAttribute="leading" id="jvX-gp-ElS"/>
                         <constraint firstItem="EVX-X1-crz" firstAttribute="leading" secondItem="HvQ-QH-w1a" secondAttribute="leading" id="knY-GX-23R"/>
