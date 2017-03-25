@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +37,7 @@
                     <connections>
                         <outlet property="theView" destination="zWu-M6-YJQ" id="DqX-z9-LuN"/>
                         <outlet property="view" destination="Suk-ru-UeV" id="wdk-EV-Yzr"/>
-                        <segue destination="mWs-J3-9mW" kind="show" identifier="presentChargeBack" animates="NO" id="2rd-oZ-O6I"/>
+                        <segue destination="mWs-J3-9mW" kind="show" identifier="presentChargeBack" id="2rd-oZ-O6I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCu-oT-OH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -73,7 +72,7 @@
                     <connections>
                         <outlet property="theView" destination="SyZ-6o-cGx" id="sqy-Wt-oes"/>
                         <outlet property="view" destination="DSc-Rw-v6u" id="4Vz-GV-Y9v"/>
-                        <segue destination="GPw-0l-IeP" kind="show" identifier="presentResult" animates="NO" id="AIZ-Iv-wW8"/>
+                        <segue destination="GPw-0l-IeP" kind="show" identifier="presentResult" id="AIZ-Iv-wW8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jic-o9-ABB" userLabel="First Responder" sceneMemberID="firstResponder"/>

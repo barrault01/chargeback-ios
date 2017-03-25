@@ -7,6 +7,9 @@ target 'ChargeBack' do
   pod 'NibDesignable', '3.0.0'
   pod 'PKHUD'
   pod 'SwiftLint'
+  pod 'Atributika'
+  pod 'HexColors', '~> 5.0'
+  pod 'SevenSwitch', '~> 2.1'
 
   target 'ChargeBackTests' do
     inherit! :search_paths

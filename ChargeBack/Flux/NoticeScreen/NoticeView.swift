@@ -8,7 +8,8 @@
 
 import UIKit
 import NibDesignable
-
+import Atributika
+import HexColors
 class NoticeView: NibDesignable {
 
     var clickOnFirstActionButton: ((Void) -> Void)!
@@ -46,12 +47,11 @@ class NoticeView: NibDesignable {
     @IBOutlet weak var title: UILabel! {
         didSet {
             title.textColor = .nuTitle
-            title.text = "carregando".uppercased()
+            title.text = "carregando"
         }
     }
     @IBOutlet weak var textView: UITextView! {
         didSet {
-            textView.textColor = .nuText
             textView.text = ""
         }
     }
@@ -88,10 +88,27 @@ extension NoticeView: ConfigurableView {
         cancelButton.alpha = 1
         continueButton.alpha = 1
         activityIndicator.stopAnimating()
-        title.text = data.title.uppercased()
-        textView.text = data.description
+        title.text = data.title
+        textView.attributedText = attributedStringForNotice(string: data.description)
         continueButton.setTitle(data.primaryAction.title.uppercased(), for: .normal)
         cancelButton.setTitle(data.secondaryAction.title.uppercased(), for: .normal)
+    }
+
+    func attributedStringForNotice(string: String) -> NSAttributedString {
+        var string = string
+        let colorsParsed = string.replacingColors()
+        var styles: [Style] = [Style]()
+        let b = Style("strong").font(.boldSystemFont(ofSize: 16))
+        styles.append(b)
+        for color in colorsParsed {
+            let style = Style(color.1).font(.systemFont(ofSize: 16)).foregroundColor(UIColor("#\(color.0)")!)
+            styles.append(style)
+        }
+        let str = string.style(tags: styles)
+            .styleAll(Style.font(.systemFont(ofSize: 16)).foregroundColor(.nuText))
+            .attributedString
+        return str
+
     }
 
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import NibDesignable
+import Atributika
 
 enum CardBlockState {
     case locked, unlocked, loading
@@ -144,11 +145,21 @@ extension ChargeBackView: ConfigurableView {
     func configure(with data: ChargeBack) {
         textInputView.isEditable = true
         title.text = data.title.uppercased()
-        placeholderTextInputView.text = data.comment
+        placeholderTextInputView.attributedText = attributedStringForComment(string: data.comment)
         self.reasons = switchesContainer.configure(with: data.reasons, updateBlock: { reasonId, value in
                 self.reasons[reasonId] = value
         })
         self.heightForSwitchesConstraint.constant = switchesContainer.heightForView(for: data.reasons.count)
+
+    }
+
+    func attributedStringForComment(string: String) -> NSAttributedString {
+
+        let b = Style("strong").font(.boldSystemFont(ofSize: 14))
+        let str = string.style(tags: b)
+            .styleAll(Style.font(.systemFont(ofSize: 14)).foregroundColor(.nuHint))
+            .attributedString
+        return str
 
     }
 }

@@ -15,6 +15,9 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.dependency 'NibDesignable', '3.0.0'
   s.dependency 'PKHUD', '4.2.0'
+  s.dependency 'Atributika', '3.1.4'
+  s.dependency 'HexColors', '~> 5.0'
+  s.dependency 'SevenSwitch', '~> 2.1'
   s.exclude_files = 'ChargeBack/**/*Tests.{swift}'
 
 end

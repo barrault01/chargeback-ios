@@ -39,6 +39,10 @@ class ChargeBackViewController: UIViewController, GoBackProtocol {
         }
     }
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue == Segue.presentResult {
             if let vc = segue.destination as? ResultViewController {
