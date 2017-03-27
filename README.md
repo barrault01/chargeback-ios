@@ -29,5 +29,6 @@ Not supported for the moment
 1. Call this inside
   ``` swift
   		let vc = //some new controller where will be present the charge back
+  	
      	ChargeBackInstance.loadChargeBack(viewController: vc)
   ```

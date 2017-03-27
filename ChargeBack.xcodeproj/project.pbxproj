@@ -13,6 +13,8 @@
 		8C693BF31E84790100C8ADF3 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C693BEF1E84790100C8ADF3 /* SwitchView.swift */; };
 		8C693BF91E847F6100C8ADF3 /* MultiSwitchViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C693BF81E847F6100C8ADF3 /* MultiSwitchViewContainer.swift */; };
 		8C7FFFE51E8361B600364535 /* KeyboardShowAndHideProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FFFE41E8361B600364535 /* KeyboardShowAndHideProtocol.swift */; };
+		8CC700171E85F96400D0AE6A /* NoticeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC700161E85F96400D0AE6A /* NoticeViewTests.swift */; };
+		8CC700191E860DBE00D0AE6A /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC700181E860DBE00D0AE6A /* Regex.swift */; };
 		8CE4E0FE1E82AE1100535C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4E0FD1E82AE1100535C6C /* AppDelegate.swift */; };
 		8CE4E1001E82AE1100535C6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4E0FF1E82AE1100535C6C /* ViewController.swift */; };
 		8CE4E1031E82AE1100535C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE4E1011E82AE1100535C6C /* Main.storyboard */; };
@@ -61,6 +63,7 @@
 		8CEF3A821E82B00B00A0C770 /* LoadingMockedJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3A3C1E82AFFA00A0C770 /* LoadingMockedJSONTests.swift */; };
 		8CEF3A831E82B00B00A0C770 /* NoticeRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3A411E82AFFA00A0C770 /* NoticeRequesterTests.swift */; };
 		8CEF3A881E82B47400A0C770 /* ChargebackRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF3A301E82AFFA00A0C770 /* ChargebackRequesterTests.swift */; };
+		8CF373791E87C8920048C532 /* ParsingColorsInStringFromHtml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF373781E87C8920048C532 /* ParsingColorsInStringFromHtml.swift */; };
 		D7582443E89C0E82B9E57CA8 /* Pods_ChargeBackDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90314803D530C595D360EB99 /* Pods_ChargeBackDemo.framework */; };
 		D8CC68618D80EDC28637A857 /* Pods_ChargeBackDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C725CA2201A389ABBAC74138 /* Pods_ChargeBackDemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -119,6 +122,8 @@
 		8C693BEF1E84790100C8ADF3 /* SwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		8C693BF81E847F6100C8ADF3 /* MultiSwitchViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiSwitchViewContainer.swift; path = MultiSwitchView/MultiSwitchViewContainer.swift; sourceTree = "<group>"; };
 		8C7FFFE41E8361B600364535 /* KeyboardShowAndHideProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardShowAndHideProtocol.swift; sourceTree = "<group>"; };
+		8CC700161E85F96400D0AE6A /* NoticeViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewTests.swift; sourceTree = "<group>"; };
+		8CC700181E860DBE00D0AE6A /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		8CE4E0FB1E82AE1100535C6C /* ChargeBackDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargeBackDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE4E0FD1E82AE1100535C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CE4E0FF1E82AE1100535C6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +177,7 @@
 		8CEF3A561E82AFFA00A0C770 /* ResultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8CEF3A571E82AFFA00A0C770 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		8CEF3A581E82AFFA00A0C770 /* ViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
+		8CF373781E87C8920048C532 /* ParsingColorsInStringFromHtml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingColorsInStringFromHtml.swift; sourceTree = "<group>"; };
 		90314803D530C595D360EB99 /* Pods_ChargeBackDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChargeBackDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1665AE419C10AFAD9987AE4 /* Pods-ChargeBackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChargeBackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChargeBackTests/Pods-ChargeBackTests.release.xcconfig"; sourceTree = "<group>"; };
 		BDA800146A9EF9C18ECD25FA /* Pods-ChargeBack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChargeBack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChargeBack/Pods-ChargeBack.debug.xcconfig"; sourceTree = "<group>"; };
@@ -326,6 +332,7 @@
 		8CEF3A291E82AFFA00A0C770 /* ChargeBackAPI */ = {
 			isa = PBXGroup;
 			children = (
+				8CC700181E860DBE00D0AE6A /* Regex.swift */,
 				8CEF3A2A1E82AFFA00A0C770 /* APIDefinition.swift */,
 				8CEF3A2B1E82AFFA00A0C770 /* BlockUnBlockCard */,
 				8CEF3A2D1E82AFFA00A0C770 /* ChargeBack */,
@@ -406,6 +413,7 @@
 				8CEF3A511E82AFFA00A0C770 /* NuColors.swift */,
 				8CEF3A521E82AFFA00A0C770 /* ResultScreen */,
 				8CEF3A571E82AFFA00A0C770 /* Storyboards.swift */,
+				8CF373781E87C8920048C532 /* ParsingColorsInStringFromHtml.swift */,
 				8CEF3A581E82AFFA00A0C770 /* ViewProtocols.swift */,
 			);
 			path = Flux;
@@ -430,6 +438,7 @@
 			children = (
 				8CEF3A4C1E82AFFA00A0C770 /* NoticeModel.swift */,
 				8CEF3A4D1E82AFFA00A0C770 /* NoticeView.swift */,
+				8CC700161E85F96400D0AE6A /* NoticeViewTests.swift */,
 				8CEF3A4E1E82AFFA00A0C770 /* NoticeView.xib */,
 				8CEF3A4F1E82AFFA00A0C770 /* NoticeViewController.swift */,
 				8CEF3A501E82AFFA00A0C770 /* NoticeViewModel.swift */,
@@ -524,12 +533,12 @@
 			buildConfigurationList = 8CEF3A211E82AF1E00A0C770 /* Build configuration list for PBXNativeTarget "ChargeBack" */;
 			buildPhases = (
 				B356EB2A0B76F190FE099DC4 /* [CP] Check Pods Manifest.lock */,
+				8CEF3A891E82B8BB00A0C770 /* Swift Lint */,
 				8CEF3A041E82AF1E00A0C770 /* Sources */,
 				8CEF3A051E82AF1E00A0C770 /* Frameworks */,
 				8CEF3A061E82AF1E00A0C770 /* Headers */,
 				8CEF3A071E82AF1E00A0C770 /* Resources */,
 				512FB8042828B9324958D161 /* [CP] Copy Pods Resources */,
-				8CEF3A891E82B8BB00A0C770 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -781,7 +790,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		9C32CF17DFA3C5548492A5F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -878,10 +887,12 @@
 				8C693BF91E847F6100C8ADF3 /* MultiSwitchViewContainer.swift in Sources */,
 				8CEF3A771E82AFFA00A0C770 /* NoticeViewController.swift in Sources */,
 				8CEF3A621E82AFFA00A0C770 /* Requester.swift in Sources */,
+				8CF373791E87C8920048C532 /* ParsingColorsInStringFromHtml.swift in Sources */,
 				8CEF3A701E82AFFA00A0C770 /* ChargeBackViewController.swift in Sources */,
 				8CEF3A7A1E82AFFA00A0C770 /* ResultView.swift in Sources */,
 				8CEF3A7C1E82AFFA00A0C770 /* ResultViewController.swift in Sources */,
 				8CEF3A5B1E82AFFA00A0C770 /* APIDefinition.swift in Sources */,
+				8CC700191E860DBE00D0AE6A /* Regex.swift in Sources */,
 				8CEF3A631E82AFFA00A0C770 /* EntryPointRequester.swift in Sources */,
 				8CEF3A791E82AFFA00A0C770 /* NuColors.swift in Sources */,
 				8CEF3A5C1E82AFFA00A0C770 /* BlockCardRequester.swift in Sources */,
@@ -903,6 +914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CEF3A811E82B00B00A0C770 /* EntryPointRequesterTests.swift in Sources */,
+				8CC700171E85F96400D0AE6A /* NoticeViewTests.swift in Sources */,
 				8CEF3A821E82B00B00A0C770 /* LoadingMockedJSONTests.swift in Sources */,
 				8CEF3A831E82B00B00A0C770 /* NoticeRequesterTests.swift in Sources */,
 				8CEF3A881E82B47400A0C770 /* ChargebackRequesterTests.swift in Sources */,
@@ -1122,7 +1134,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1146,7 +1158,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

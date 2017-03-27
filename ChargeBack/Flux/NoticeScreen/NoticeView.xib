@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,8 +61,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-js-4Mh">
-                            <rect key="frame" x="28" y="69" width="295" height="382"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-js-4Mh">
+                            <rect key="frame" x="16" y="69" width="319" height="382"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -98,7 +97,7 @@
                         <constraint firstItem="dZw-lv-R92" firstAttribute="top" secondItem="XGw-Zo-Ia1" secondAttribute="bottom" id="Lek-h1-kPw"/>
                         <constraint firstItem="XGw-Zo-Ia1" firstAttribute="leading" secondItem="XdP-GX-RV3" secondAttribute="leading" id="Ooo-Vf-i0f"/>
                         <constraint firstAttribute="trailing" secondItem="iLN-GL-ujU" secondAttribute="trailing" id="OzO-43-wS5"/>
-                        <constraint firstAttribute="trailing" secondItem="s8v-js-4Mh" secondAttribute="trailing" constant="28" id="S7V-2E-Ckl"/>
+                        <constraint firstAttribute="trailing" secondItem="s8v-js-4Mh" secondAttribute="trailing" constant="16" id="S7V-2E-Ckl"/>
                         <constraint firstItem="Qst-dX-Y5f" firstAttribute="leading" secondItem="XdP-GX-RV3" secondAttribute="leading" constant="36" id="WwR-2A-r5X"/>
                         <constraint firstItem="XGw-Zo-Ia1" firstAttribute="top" secondItem="iLN-GL-ujU" secondAttribute="bottom" id="c2T-Xu-pCn"/>
                         <constraint firstItem="P9A-Lo-cyo" firstAttribute="leading" secondItem="XdP-GX-RV3" secondAttribute="leading" id="e28-cO-u4g"/>
@@ -110,7 +109,7 @@
                         <constraint firstAttribute="trailing" secondItem="Qst-dX-Y5f" secondAttribute="trailing" constant="36" id="qCf-Ya-Jzr"/>
                         <constraint firstAttribute="trailing" secondItem="XGw-Zo-Ia1" secondAttribute="trailing" id="qvq-ao-TKY"/>
                         <constraint firstItem="Qst-dX-Y5f" firstAttribute="centerX" secondItem="XdP-GX-RV3" secondAttribute="centerX" id="vo3-1V-ev0"/>
-                        <constraint firstItem="s8v-js-4Mh" firstAttribute="leading" secondItem="XdP-GX-RV3" secondAttribute="leading" constant="28" id="voh-Sx-MHz"/>
+                        <constraint firstItem="s8v-js-4Mh" firstAttribute="leading" secondItem="XdP-GX-RV3" secondAttribute="leading" constant="16" id="voh-Sx-MHz"/>
                         <constraint firstAttribute="trailing" secondItem="dZw-lv-R92" secondAttribute="trailing" id="z5P-ka-EtX"/>
                     </constraints>
                 </view>

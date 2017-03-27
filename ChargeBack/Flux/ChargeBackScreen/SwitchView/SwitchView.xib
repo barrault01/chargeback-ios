@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwitchView">
             <connections>
-                <outlet property="isSelectedSwitch" destination="SV6-ht-Jea" id="Ump-SH-Ivz"/>
+                <outlet property="isSelectedSwitch" destination="HOM-Ng-kZK" id="oqN-Kh-cyq"/>
                 <outlet property="label" destination="SBy-hc-Wim" id="QMS-qs-l1u"/>
             </connections>
         </placeholder>
@@ -20,26 +20,32 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SBy-hc-Wim">
-                    <rect key="frame" x="16" y="323" width="286" height="21"/>
+                    <rect key="frame" x="16" y="323" width="288" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SV6-ht-Jea">
-                    <rect key="frame" x="310" y="318" width="51" height="31"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOM-Ng-kZK" customClass="SevenSwitch" customModule="SevenSwitch">
+                    <rect key="frame" x="312" y="321.5" width="55" height="24"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="kQa-3j-5ww"/>
+                        <constraint firstAttribute="height" constant="24" id="mAR-ca-9sw"/>
+                    </constraints>
                     <connections>
-                        <action selector="didChangeValue:" destination="-1" eventType="valueChanged" id="IlK-yw-1kY"/>
+                        <action selector="didChangeValue:" destination="-1" eventType="valueChanged" id="KWp-R9-A1b"/>
                     </connections>
-                </switch>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="SV6-ht-Jea" firstAttribute="centerY" secondItem="yYG-Ew-TVF" secondAttribute="centerY" id="9qk-uj-Md1"/>
-                <constraint firstAttribute="trailing" secondItem="SV6-ht-Jea" secondAttribute="trailing" constant="16" id="Cks-Ka-Wfz"/>
                 <constraint firstItem="SBy-hc-Wim" firstAttribute="leading" secondItem="yYG-Ew-TVF" secondAttribute="leading" constant="16" id="Lfg-d9-irP"/>
-                <constraint firstItem="SV6-ht-Jea" firstAttribute="leading" secondItem="SBy-hc-Wim" secondAttribute="trailing" constant="8" id="Up1-o1-Rt3"/>
+                <constraint firstItem="HOM-Ng-kZK" firstAttribute="leading" secondItem="SBy-hc-Wim" secondAttribute="trailing" constant="8" id="P2H-bK-j93"/>
+                <constraint firstItem="HOM-Ng-kZK" firstAttribute="centerY" secondItem="yYG-Ew-TVF" secondAttribute="centerY" id="TTP-3f-6sE"/>
                 <constraint firstItem="SBy-hc-Wim" firstAttribute="centerY" secondItem="yYG-Ew-TVF" secondAttribute="centerY" id="aZI-MR-kWW"/>
+                <constraint firstAttribute="trailing" secondItem="HOM-Ng-kZK" secondAttribute="trailing" constant="8" id="jfq-f9-iJ9"/>
             </constraints>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
     </objects>
 </document>

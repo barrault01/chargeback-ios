@@ -38,6 +38,10 @@ class NoticeViewController: UIViewController, GoBackProtocol {
         }
     }
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue == Segue.presentChargeBack {
             if let vc = segue.destination as? ChargeBackViewController,

@@ -27,6 +27,10 @@ class ResultViewController: UIViewController, GoBackProtocol {
         viewModel.configureAction(action: .notice)
     }
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+
     override var prefersStatusBarHidden: Bool {
         return true
     }

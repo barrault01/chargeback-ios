@@ -8,17 +8,21 @@
 
 import UIKit
 import NibDesignable
+import SevenSwitch
 
 class SwitchView: NibDesignable {
 
     var updateSwitchValue: ((String, Bool) -> Void)!
     var reasonId: String!
 
-    @IBOutlet weak var isSelectedSwitch: UISwitch! {
+    @IBOutlet weak var isSelectedSwitch: SevenSwitch! {
         didSet {
-            isSelectedSwitch.isOn = false
+            isSelectedSwitch.on = false
             isSelectedSwitch.onTintColor = .nuGreen
-            isSelectedSwitch.thumbTintColor = .nuDisabledGray
+            isSelectedSwitch.inactiveColor = .nuCloseGray
+            isSelectedSwitch.offLabel.text = "sim"
+            isSelectedSwitch.onLabel.text = "não"
+
         }
     }
 
@@ -28,10 +32,11 @@ class SwitchView: NibDesignable {
         }
     }
 
-    @IBAction func didChangeValue(_ sender: UISwitch) {
-        let isOn = sender.isOn
+    @IBAction func didChangeValue(_ sender: SevenSwitch) {
+        let isOn = sender.isOn()
         updateInterface(switchIsOn: isOn)
         updateSwitchValue(reasonId, isOn)
+
     }
 
     private func updateInterface(switchIsOn: Bool) {
