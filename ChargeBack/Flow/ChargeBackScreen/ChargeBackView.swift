@@ -88,6 +88,7 @@ class ChargeBackView: NibDesignable {
     }
     @IBOutlet weak var textInputView: UITextView! {
         didSet {
+            textInputView.accessibilityLabel = "Type your text here"
             textInputView.delegate = self
             textInputView.isEditable = false
             textInputView.textColor = .nuText

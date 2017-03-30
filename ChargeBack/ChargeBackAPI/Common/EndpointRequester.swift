@@ -53,9 +53,21 @@ extension EndpointRequester {
 
     func doPost(mockedFileName: String? = nil) {
 
-        if let mockedFileName = mockedFileName {
-            Requester.mockedEnpoint(jsonName: mockedFileName, parser: self.parsePostJson)
+        var fileName = mockedFileName
+        if let stubEndpointsVar = ProcessInfo.processInfo.environment["stub_endpoints"] {
+            if stubEndpointsVar == "true" {
+                fileName = "post"
+            }
+        }
+        if let forceFail = ProcessInfo.processInfo.environment["force_failing"] {
+            if forceFail == "true" {
+                Requester.mockedFail(failingMethod: self.failingGetWithMessage)
+                return
+            }
+        }
 
+        if let fileName = fileName {
+            Requester.mockedEnpoint(jsonName: fileName, parser: self.parsePostJson)
             return
         }
         guard let endpoint = action.endpoint() else {
