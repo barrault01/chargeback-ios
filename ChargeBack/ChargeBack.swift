@@ -18,7 +18,11 @@ public struct ChargeBackInstance {
             let navigationCtrl = Storyboards.ChargeBack.instantiateInitialViewController()
             if let chargeBack = navigationCtrl.viewControllers.first as? NoticeViewController {
                 let entryPoint = EntryPointRequester(action: .entry)
-                entryPoint.completion = { action in
+                entryPoint.completion = { action, errorString in
+                    guard let action = action else {
+                        showErrorAlert(errorString: errorString)
+                        return
+                    }
                     chargeBack.action = action
                     chargeBack.rootViewController = viewController
                     DispatchQueue.main.async {
@@ -38,6 +42,16 @@ public struct ChargeBackInstance {
     static func bundle() -> Bundle {
         let bundle = Bundle(for: ChargebackRequester.self)
         return bundle
+    }
+
+}
+
+func showErrorAlert(errorString: String?) {
+
+    DispatchQueue.main.async {
+        let string = errorString ?? "Alguma coisa deu errado"
+        HUD.show(.labeledError(title: nil, subtitle: string))
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
 
 }

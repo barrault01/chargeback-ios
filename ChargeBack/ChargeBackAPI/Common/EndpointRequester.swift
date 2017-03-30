@@ -13,9 +13,9 @@ protocol EndpointRequester: class {
     associatedtype DataReturnedInRequest
     var currentTask: URLSessionTask? { get set }
     var action: ChargeBackAPI.Actions { get set }
-    var completion: ((DataReturnedInRequest) -> Void)? { get set }
+    var completion: ((DataReturnedInRequest?, String?) -> Void)? { get set }
 
-    var postCompletion: ((Bool) -> Void)? { get set }
+    var postCompletion: ((Bool, String?) -> Void)? { get set }
     func parseJson(json: [String: Any])
     func parsePostJson(json: [String: Any])
     func parameters() -> [String: Any]?
@@ -31,6 +31,13 @@ extension EndpointRequester {
                 fileName = action.mockedFile()
             }
         }
+        if let forceFail = ProcessInfo.processInfo.environment["force_failing"] {
+            if forceFail == "true" {
+                Requester.mockedFail(failingMethod: self.failingGetWithMessage)
+                return
+            }
+        }
+
         if let mockedFileName = fileName {
             Requester.mockedEnpoint(jsonName: mockedFileName, parser: self.parseJson)
             return
@@ -39,13 +46,16 @@ extension EndpointRequester {
             assertionFailure("this sould not be called because we don't know this endpoint yet")
             return
         }
-        currentTask = Requester.makingGettRequest(urlInString: endpoint, parser: self.parseJson)
+        currentTask = Requester.makingGettRequest(urlInString: endpoint,
+                                                  parser: self.parseJson,
+                                                  failingMethod: self.failingGetWithMessage)
     }
 
     func doPost(mockedFileName: String? = nil) {
 
         if let mockedFileName = mockedFileName {
             Requester.mockedEnpoint(jsonName: mockedFileName, parser: self.parsePostJson)
+
             return
         }
         guard let endpoint = action.endpoint() else {
@@ -54,7 +64,8 @@ extension EndpointRequester {
         }
         currentTask = Requester.makingPostRequest(urlInString: endpoint,
                                                   params: self.parameters(),
-                                                  parser: self.parsePostJson)
+                                                  parser: self.parsePostJson,
+                                                  failingMethod: self.failingPostWithMessage)
     }
 
     func parseLinks(json: [String: Any]) -> [ChargeBackAPI.Actions] {
@@ -77,13 +88,26 @@ extension EndpointRequester {
     }
 
     func parsePostJson(json: [String: Any]) {
-        guard let status = json["status"] as? String  else { return }
+        let status = json["status"] as? String
         if let postCompletion = postCompletion {
-            postCompletion(status == "Ok")
+            postCompletion(status == "Ok", nil)
         }
     }
 
      func parameters() -> [String: Any]? {
         return nil
     }
+
+    func failingPostWithMessage(error: NuError?) {
+        if let postCompletion = postCompletion {
+            postCompletion(false, error?.messageToPresentToUser())
+        }
+    }
+
+    func failingGetWithMessage(error: NuError?) {
+        if let completion = completion {
+            completion(nil, error?.messageToPresentToUser())
+        }
+    }
+
 }

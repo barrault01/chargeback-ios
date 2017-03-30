@@ -4,11 +4,13 @@
 
 +[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+Tested with Xcode 8.3.
 
 ChargeBack
 =============
 
 ## Installation
+ 
 
 ### CocoaPods
 
@@ -32,6 +34,6 @@ Not supported for the moment
 1. Call this inside
   ``` swift
   		let vc = //some new controller where will be present the charge back
-  	
+  		
      	ChargeBackInstance.presentChargeBack(viewController: vc)
   ```

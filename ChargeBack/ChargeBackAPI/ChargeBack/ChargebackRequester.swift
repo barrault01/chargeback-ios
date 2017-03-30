@@ -13,8 +13,8 @@ class ChargebackRequester: EndpointRequester {
     typealias DataReturnedInRequest = ChargeBack
     var currentTask: URLSessionTask?
     var action: ChargeBackAPI.Actions
-    var completion: ((DataReturnedInRequest) -> Void)?
-    var postCompletion: ((Bool) -> Void)?
+    var completion: ((DataReturnedInRequest?, String?) -> Void)?
+    var postCompletion: ((Bool, String?) -> Void)?
     var chargeBackParameters: (reasons: [String: Bool], message: String)?
     required init(action: ChargeBackAPI.Actions) {
         self.action = action
@@ -50,7 +50,7 @@ class ChargebackRequester: EndpointRequester {
         guard possibleActions.count > 0 else { return }
         guard let chargeBack = parseChargeBack(json: json, nextActions: possibleActions) else { return }
         if let completion = completion {
-            completion(chargeBack)
+            completion(chargeBack, nil)
         }
     }
 

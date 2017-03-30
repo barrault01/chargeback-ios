@@ -13,8 +13,8 @@ class NoticeRequester: EndpointRequester {
     typealias DataReturnedInRequest = Notice
     var currentTask: URLSessionTask?
     var action: ChargeBackAPI.Actions
-    var completion: ((DataReturnedInRequest) -> Void)?
-    var postCompletion: ((Bool) -> Void)?
+    var completion: ((DataReturnedInRequest?, String?) -> Void)?
+    var postCompletion: ((Bool, String?) -> Void)?
 
     required init(action: ChargeBackAPI.Actions) {
         self.action = action
@@ -26,7 +26,7 @@ class NoticeRequester: EndpointRequester {
         guard let nextAction = possibleActions.first else { return }
         guard let notice = parseNotice(json: json, nextAction: nextAction) else { return }
         if let completion = completion {
-            completion(notice)
+            completion(notice, nil)
         }
     }
 

@@ -8,34 +8,64 @@
 
 import Foundation
 
+public enum NuError {
+    case custom(description: String)
+    case invalidData
+    case invalidJsonParsing
+    case timeout
+    public init(description: String) {
+        switch description {
+        default: self = .custom(description: description)
+        }
+    }
+
+    func messageToPresentToUser() -> String {
+
+        switch self {
+        case .custom(let errorDescription) :  return errorDescription
+        case .invalidData : return "Não foi possível conectar ao serviço"
+        case .invalidJsonParsing:  return "Falha durante a conexão com o serviço"
+        case .timeout:  return "Por favor tente novamente"
+        }
+    }
+}
+
 struct Requester {
 
     static internal func makingPostRequest(urlInString: String,
                                            params: [String: Any]?,
-                                           parser: @escaping ([String: Any]) -> Void) -> URLSessionDataTask? {
+                                           parser: @escaping ([String: Any]) -> Void,
+                                           failingMethod: @escaping (NuError?) -> Void) -> URLSessionDataTask? {
         guard let req = postRequest(urlInString: urlInString, params: params) else { return nil }
-        return making(request: req, parser: parser)
+        return making(request: req, parser: parser, failingMethod: failingMethod)
     }
 
     static internal func makingGettRequest(urlInString: String,
-                                           parser: @escaping ([String: Any]) -> Void) -> URLSessionDataTask? {
+                                           parser: @escaping ([String: Any]) -> Void,
+                                           failingMethod: @escaping (NuError?) -> Void) -> URLSessionDataTask? {
         guard let req = getRequest(urlInString: urlInString) else { return nil }
-        return making(request: req, parser: parser)
+        return making(request: req, parser: parser, failingMethod: failingMethod)
     }
 
     static private func making(request: URLRequest,
-                               parser: @escaping ([String: Any]) -> Void) -> URLSessionDataTask? {
+                               parser: @escaping ([String: Any]) -> Void,
+                               failingMethod: @escaping (NuError?) -> Void) -> URLSessionDataTask? {
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
-            if let error = error {
-                print(error)
+            guard let response = response else {
+                failingMethod(.invalidData)
                 return
             }
+            print(response)
+            if let error = error {
+                failingMethod(NuError(description: error.localizedDescription))
+                return
+            }
+
             if let json = self.parseData(data: data) {
                 parser(json)
+            } else {
+                failingMethod(.invalidJsonParsing)
             }
 
         }
@@ -103,11 +133,14 @@ extension Requester {
         return nil
     }
 
+    static func mockedFail(failingMethod: @escaping (NuError?) -> Void) {
+        failingMethod(NuError.invalidData)
+    }
+
     static func mockedEnpoint(jsonName: String, parser: @escaping ([String: Any]) -> Void) {
         if let data = mockedJSON(with: jsonName),
             let json = self.parseData(data: data) {
             parser(json)
         }
     }
-
 }

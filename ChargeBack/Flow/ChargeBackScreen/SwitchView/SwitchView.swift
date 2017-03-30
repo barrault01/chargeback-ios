@@ -20,6 +20,8 @@ class SwitchView: NibDesignable {
             isSelectedSwitch.on = false
             isSelectedSwitch.onTintColor = .nuGreen
             isSelectedSwitch.inactiveColor = .nuCloseGray
+            isSelectedSwitch.onLabel.textColor = .white
+            isSelectedSwitch.offLabel.textColor = .white
             isSelectedSwitch.offLabel.text = "não"
             isSelectedSwitch.onLabel.text = "sim"
 
