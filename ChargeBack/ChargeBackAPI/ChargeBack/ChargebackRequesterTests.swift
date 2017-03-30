@@ -14,8 +14,11 @@ class ChargebackRequesterTests: XCTestCase {
     func testChargeBackParser() {
 
         let noticeRequester = ChargebackRequester(action: .chargeback)
-        noticeRequester.completion = { chargeback in
-
+        noticeRequester.completion = { chargeback, _ in
+            guard let chargeback = chargeback else {
+                XCTFail()
+                return
+            }
             let comment = "Nos conte <strong>em detalhes</strong> o que aconteceu com a sua compra em Transaction..."
             XCTAssert(chargeback.comment == comment)
             XCTAssert(chargeback.id == "fraud")

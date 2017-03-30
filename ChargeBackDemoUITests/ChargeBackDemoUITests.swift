@@ -25,12 +25,16 @@ class ChargeBackDemoUITests: XCTestCase {
     func testShowingFirstScreenAndClose() {
         app.buttons["ChargeBack"].tap()
         app.buttons["FECHAR"].tap()
-
     }
 
     func testFullFlux() {
         app.buttons["ChargeBack"].tap()
         app.buttons["CONTINUAR"].tap()
+        let textView = app.textViews["Type your text here"]
+        textView.tap()
+        textView.typeText("bom dia")
+        app.buttons["CONTESTAR"].tap()
+        app.buttons["FECHAR"].tap()
     }
 
 }

@@ -69,8 +69,7 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8CEF3A081E82AF1E00A0C770"
@@ -78,7 +77,7 @@
             BlueprintName = "ChargeBack"
             ReferencedContainer = "container:ChargeBack.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "stub_endpoints"

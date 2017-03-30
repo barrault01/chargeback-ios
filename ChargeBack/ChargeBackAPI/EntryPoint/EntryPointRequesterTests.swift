@@ -14,7 +14,7 @@ class EntryPointRequesterTests: XCTestCase {
     func testEndpointRequester() {
 
         let noticeRequester = EntryPointRequester(action: .entry)
-        noticeRequester.completion = { nextAction in
+        noticeRequester.completion = { nextAction, _ in
             XCTAssert(nextAction == .notice)
         }
         noticeRequester.doGet(mockedFileName: "entry")

@@ -29,7 +29,9 @@ class ChargeBackView: NibDesignable {
     var reasons: [String: Bool] = [String: Bool]()
     @IBOutlet weak var lockerView: LockerView! {
         didSet {
-            lockerView?.clickOnLock = updateLocker
+            lockerView.clickOnLock = updateLocker
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEditing(_:)))
+            lockerView.addGestureRecognizer(tapRecognizer)
         }
     }
     @IBOutlet weak var heightForSwitchesConstraint: NSLayoutConstraint! {
@@ -86,6 +88,7 @@ class ChargeBackView: NibDesignable {
     }
     @IBOutlet weak var textInputView: UITextView! {
         didSet {
+            textInputView.accessibilityLabel = "Type your text here"
             textInputView.delegate = self
             textInputView.isEditable = false
             textInputView.textColor = .nuText

@@ -71,13 +71,15 @@ class ChargeBackViewModel: ModelRequester {
             return
         }
         let req = ChargebackRequester(action: .chargeback)
-        req.postCompletion = { sucess in
+        req.postCompletion = { sucess, error in
             DispatchQueue.main.async {
                 HUD.hide()
                 if sucess {
                     if let continueBlock = self.continueBlock {
                         continueBlock()
                     }
+                } else {
+                    showErrorAlert(errorString: error)
                 }
             }
         }
@@ -89,9 +91,9 @@ class ChargeBackViewModel: ModelRequester {
     func blockCard() {
         self.modelView.changeCardBlockState(state: .loading)
         let req = BlockUnBlockCardRequester(action: .card_block)
-        req.postCompletion = { results in
+        req.postCompletion = { sucess, error in
             DispatchQueue.main.async {
-                self.cardLockState = .locked
+                self.cardLockState = sucess ? .locked : .unlocked
             }
         }
         let _ = req.doPost()
@@ -100,9 +102,9 @@ class ChargeBackViewModel: ModelRequester {
     func unlockCard() {
         self.modelView.changeCardBlockState(state: .loading)
         let req = BlockUnBlockCardRequester(action: .card_unblock)
-        req.postCompletion = { results in
+        req.postCompletion = { sucess, error in
             DispatchQueue.main.async {
-            self.cardLockState = .unlocked
+                self.cardLockState = sucess ? .unlocked : .locked
             }
         }
         let _ = req.doPost()

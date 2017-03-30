@@ -15,7 +15,7 @@ protocol ModelRequester: class {
     var result: Requester.DataReturnedInRequest? { get set }
     var modelView: ViewForModel { get set }
     init(view: ViewForModel, dissmissMethod: @escaping ((Void) -> Void))
-    func configureView(with data: Requester.DataReturnedInRequest)
+    func configureView(with data: Requester.DataReturnedInRequest?, errorString: String?)
     func configureAction(action: ChargeBackAPI.Actions)
 
 }
@@ -35,7 +35,11 @@ extension ModelRequester {
         }
     }
 
-    func configureView(with data: Requester.DataReturnedInRequest) {
+    func configureView(with data: Requester.DataReturnedInRequest?, errorString: String?) {
+        guard let data = data else {
+            showErrorAlert(errorString: errorString)
+            return
+        }
         DispatchQueue.main.async {
             self.applyToView(view: self.modelView, object: data)
         }
