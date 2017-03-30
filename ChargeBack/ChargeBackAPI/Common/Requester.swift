@@ -52,12 +52,12 @@ struct Requester {
         return request
     }
 
-   static private func postRequest(urlInString: String, params: [String: Any]?) -> URLRequest? {
-    var request = httpRequest(urlInString: urlInString, httpMethod: "POST")
-    if let params = params {
-        request?.httpBody = try? JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-    }
-    return request
+    static private func postRequest(urlInString: String, params: [String: Any]?) -> URLRequest? {
+        var request = httpRequest(urlInString: urlInString, httpMethod: "POST")
+        if let params = params {
+            request?.httpBody = try? JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+        }
+        return request
     }
 
     static private func getRequest(urlInString: String) -> URLRequest? {
@@ -65,7 +65,7 @@ struct Requester {
         return request
     }
 
-   static fileprivate func parseData(data: Data?) -> [String: Any]? {
+    static fileprivate func parseData(data: Data?) -> [String: Any]? {
         guard let data = data else { return nil }
         do {
             let json = try JSONSerialization.jsonObject(with: data) as? [String: Any]

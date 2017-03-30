@@ -20,23 +20,26 @@ class SwitchView: NibDesignable {
             isSelectedSwitch.on = false
             isSelectedSwitch.onTintColor = .nuGreen
             isSelectedSwitch.inactiveColor = .nuCloseGray
-            isSelectedSwitch.offLabel.text = "sim"
-            isSelectedSwitch.onLabel.text = "não"
+            isSelectedSwitch.offLabel.text = "não"
+            isSelectedSwitch.onLabel.text = "sim"
 
         }
     }
 
     @IBOutlet weak var label: UILabel! {
         didSet {
-            label.textColor = .nuGreen
+            label.textColor = .nuText
         }
     }
 
     @IBAction func didChangeValue(_ sender: SevenSwitch) {
         let isOn = sender.isOn()
+        updateSwitchValue(isOn: isOn)
+    }
+
+    func updateSwitchValue(isOn: Bool) {
         updateInterface(switchIsOn: isOn)
         updateSwitchValue(reasonId, isOn)
-
     }
 
     private func updateInterface(switchIsOn: Bool) {

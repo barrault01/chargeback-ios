@@ -11,21 +11,27 @@ import PKHUD
 
 public struct ChargeBackInstance {
 
-    public static func loadChargeBack(viewController: UIViewController) {
+    public static func presentChargeBack(viewController: UIViewController, onComplete: ((Void) -> Void)? = nil) {
 
-        HUD.show(.progress)
-        let navigationCtrl = Storyboards.ChargeBack.instantiateInitialViewController()
-        if let chargeBack = navigationCtrl.viewControllers.first as? NoticeViewController {
-            let entryPoint = EntryPointRequester(action: .entry)
-            entryPoint.completion = { action in
-                chargeBack.action = action
-                chargeBack.rootViewController = viewController
-                DispatchQueue.main.async {
-                    HUD.hide()
-                    viewController.present(chargeBack, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            HUD.show(.progress)
+            let navigationCtrl = Storyboards.ChargeBack.instantiateInitialViewController()
+            if let chargeBack = navigationCtrl.viewControllers.first as? NoticeViewController {
+                let entryPoint = EntryPointRequester(action: .entry)
+                entryPoint.completion = { action in
+                    chargeBack.action = action
+                    chargeBack.rootViewController = viewController
+                    DispatchQueue.main.async {
+                        HUD.hide()
+                        viewController.present(chargeBack, animated: false) {
+                            if let onComplete = onComplete {
+                                onComplete()
+                            }
+                        }
+                    }
                 }
+                entryPoint.doGet()
             }
-            let _ = entryPoint.doGet()
         }
     }
 

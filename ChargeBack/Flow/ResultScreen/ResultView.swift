@@ -33,7 +33,6 @@ class ResultView: NibDesignable {
         didSet {
             descrptionTextView.textColor = .nuText
         }
-
     }
 
     @IBOutlet weak var closeButton: UIButton! {
@@ -44,13 +43,5 @@ class ResultView: NibDesignable {
 
     @IBAction func didClickOnCloseButton(_ sender: Any) {
         clickedOnCloseButton()
-    }
-}
-
-extension ResultView: ConfigurableView {
-
-    typealias ConfigurableObject = ChargeBack
-    func configure(with data: ChargeBack) {
-
     }
 }

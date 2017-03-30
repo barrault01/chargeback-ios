@@ -10,6 +10,7 @@ import UIKit
 import NibDesignable
 import Atributika
 import HexColors
+
 class NoticeView: NibDesignable {
 
     var clickOnFirstActionButton: ((Void) -> Void)!
