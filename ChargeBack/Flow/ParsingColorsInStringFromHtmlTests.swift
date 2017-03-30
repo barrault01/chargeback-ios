@@ -1,8 +1,8 @@
 //
-//  NoticeViewTests.swift
+//  ParsingColorsInStringFromHtmlTests.swift
 //  ChargeBack
 //
-//  Created by Antoine Barrault on 24/03/2017.
+//  Created by Antoine Barrault on 27/03/2017.
 //  Copyright © 2017 Antoine Barrault. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ func == (lhs: [(String, String)], rhs: [(String, String)]) -> Bool {
     return lhs.count == rhs.count && equal.count == lhs.count
 }
 
-class NoticeViewTests: XCTestCase {
+class ParsingColorsInStringFromHtmlTests: XCTestCase {
 
     func testExtratingColorsWithOneColor() {
 
@@ -83,4 +83,22 @@ class NoticeViewTests: XCTestCase {
 
         XCTAssert(resultString == result)
     }
+
+    func testReplactingAllColorsAndReturningColors() {
+        // swiftlint:disable:next line_length
+        let initialString = "Você pode <font color=\"#6e2b77\">procurar o nome do estabelecimento no Google</font> <font color=\"#656b77\">procurar o nome do estabelecimento no Google</font> some other thing <font color=\"#656b77\">procurar o nome do estabelecimento no Google</font> "
+
+        var string = initialString
+        let results = string.replacingColors()
+
+        // swiftlint:disable:next line_length
+        let resultString = "Você pode <customcolor1>procurar o nome do estabelecimento no Google</customcolor1> <customcolor2>procurar o nome do estabelecimento no Google</customcolor2> some other thing <customcolor2>procurar o nome do estabelecimento no Google</customcolor2> "
+        XCTAssert(results.count == 2)
+        XCTAssert(results[0].0 == "6e2b77")
+        XCTAssert(results[1].0 == "656b77")
+        XCTAssert(results[0].1 == "customcolor1")
+        XCTAssert(results[1].1 == "customcolor2")
+        XCTAssert(resultString == string)
+    }
+
 }

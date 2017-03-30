@@ -10,12 +10,27 @@ import XCTest
 
 class ChargeBackDemoUITests: XCTestCase {
 
+    let app = XCUIApplication()
+
     override func setUp() {
         super.setUp()
-        continueAfterFailure = false
-        XCUIApplication().launch()
+        app.launchEnvironment["stub_endpoints"] = "true"
+        app.launch()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+    func testShowingFirstScreenAndClose() {
+        app.buttons["ChargeBack"].tap()
+        app.buttons["FECHAR"].tap()
 
     }
-    func testExample() {
+
+    func testFullFlux() {
+        app.buttons["ChargeBack"].tap()
+        app.buttons["CONTINUAR"].tap()
     }
+
 }

@@ -18,5 +18,12 @@ class ResultViewModel: ModelRequester {
         modelView = view
         modelView.clickedOnCloseButton = dissmissMethod
     }
+}
 
+extension ResultView: ConfigurableView {
+
+    typealias ConfigurableObject = ChargeBack
+    func configure(with data: ConfigurableObject) {
+
+    }
 }

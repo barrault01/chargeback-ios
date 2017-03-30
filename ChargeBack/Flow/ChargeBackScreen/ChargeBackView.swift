@@ -150,7 +150,6 @@ extension ChargeBackView: ConfigurableView {
                 self.reasons[reasonId] = value
         })
         self.heightForSwitchesConstraint.constant = switchesContainer.heightForView(for: data.reasons.count)
-
     }
 
     func attributedStringForComment(string: String) -> NSAttributedString {

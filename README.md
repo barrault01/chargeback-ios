@@ -2,6 +2,8 @@
 
 [![Git license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/ant_one/my-private-cocoapods-repository/src/master/LICENSE)
 
++[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 
 ChargeBack
 =============
@@ -13,6 +15,7 @@ ChargeBack
 Add this to your Podfile: 
 
 `source 'git@bitbucket.org:ant_one/my-private-cocoapods-repository.git'`
+`source 'https://github.com/CocoaPods/Specs.git'`
 
 And
 
@@ -30,5 +33,5 @@ Not supported for the moment
   ``` swift
   		let vc = //some new controller where will be present the charge back
   	
-     	ChargeBackInstance.loadChargeBack(viewController: vc)
+     	ChargeBackInstance.presentChargeBack(viewController: vc)
   ```

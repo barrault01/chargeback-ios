@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didClickOnChargeBack(_ sender: UIButton) {
-       ChargeBackInstance.loadChargeBack(viewController: self)
+        ChargeBackInstance.presentChargeBack(viewController: self)
     }
 
 }

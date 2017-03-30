@@ -34,16 +34,17 @@ public struct ChargeBackAPI {
             case .card_unblock: return "card_unblock"
             }
         }
-        var httpMethods: [String] {
-            switch self {
-            case .entry, .notice: return ["GET"]
-            case .chargeback: return ["GET", "POST"]
-            case .card_block, .card_unblock: return ["POST"]
-            }
-
-        }
         func endpoint() -> String? {
              return Actions.actionsUrls[self]
+        }
+
+        func mockedFile() -> String? {
+            switch self {
+            case .entry: return "entry"
+            case .notice: return "notice"
+            case .chargeback: return "chargeback"
+            default: return nil
+            }
         }
     }
 }

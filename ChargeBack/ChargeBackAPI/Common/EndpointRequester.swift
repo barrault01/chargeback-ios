@@ -24,13 +24,14 @@ protocol EndpointRequester: class {
 
 extension EndpointRequester {
 
-    func doGet() {
-        doGet(mockedFileName: nil)
-    }
-
-    func doGet(mockedFileName: String?) {
-
-        if let mockedFileName = mockedFileName {
+    func doGet(mockedFileName: String? = nil) {
+        var fileName = mockedFileName
+        if let stubEndpointsVar = ProcessInfo.processInfo.environment["stub_endpoints"] {
+            if stubEndpointsVar == "true" {
+                fileName = action.mockedFile()
+            }
+        }
+        if let mockedFileName = fileName {
             Requester.mockedEnpoint(jsonName: mockedFileName, parser: self.parseJson)
             return
         }
@@ -41,11 +42,7 @@ extension EndpointRequester {
         currentTask = Requester.makingGettRequest(urlInString: endpoint, parser: self.parseJson)
     }
 
-    func doPost() {
-        doPost(mockedFileName: nil)
-    }
-
-    func doPost(mockedFileName: String?) {
+    func doPost(mockedFileName: String? = nil) {
 
         if let mockedFileName = mockedFileName {
             Requester.mockedEnpoint(jsonName: mockedFileName, parser: self.parsePostJson)
