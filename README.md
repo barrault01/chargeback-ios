@@ -11,6 +11,10 @@ ChargeBack
 
 ### CocoaPods
 
+Add my private repository: 
+
+	pod repo add antoine git@bitbucket.org:ant_one/my-private-cocoapods-repository.git
+
 Add this to your Podfile: 
 
     source 'git@bitbucket.org:ant_one/my-private-cocoapods-repository.git'
