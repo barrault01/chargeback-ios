@@ -102,7 +102,10 @@ extension NoticeView: ConfigurableView {
         let b = Style("strong").font(.boldSystemFont(ofSize: 16))
         styles.append(b)
         for color in colorsParsed {
-            let style = Style(color.1).font(.systemFont(ofSize: 16)).foregroundColor(UIColor("#\(color.0)")!)
+            guard let uicolor = UIColor("#\(color.0)") else {
+                continue
+            }
+            let style = Style(color.1).font(.systemFont(ofSize: 16)).foregroundColor(uicolor)
             styles.append(style)
         }
         let str = string.style(tags: styles)

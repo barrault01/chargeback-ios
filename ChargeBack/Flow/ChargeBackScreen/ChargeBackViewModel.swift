@@ -115,7 +115,7 @@ extension ChargeBackViewModel: KeyboardShowAndHideProtocol {
 
     @objc func keyboardWasShown(notification: Notification) {
 
-        var info = (notification as NSNotification).userInfo!
+        guard let info = (notification as NSNotification).userInfo else { return }
         let frame = info[UIKeyboardFrameBeginUserInfoKey] as? NSValue
         guard let keyboardFrame: CGRect = frame?.cgRectValue else { return }
         guard let animationDurationObject = info[UIKeyboardAnimationDurationUserInfoKey] as? NSValue else { return }
@@ -132,7 +132,7 @@ extension ChargeBackViewModel: KeyboardShowAndHideProtocol {
 
     @objc func keyboardWasHide(notification: Notification) {
         self.constraint().constant =  0
-        var info = (notification as NSNotification).userInfo!
+        guard let info = (notification as NSNotification).userInfo else { return }
         if let animationDurationObject = info[UIKeyboardAnimationDurationUserInfoKey] as? NSValue {
             var animationDuration = 0.0
             animationDurationObject.getValue(&animationDuration)

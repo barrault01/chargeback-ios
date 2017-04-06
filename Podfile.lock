@@ -1,6 +1,6 @@
 PODS:
   - Atributika (3.1.4)
-  - ChargeBack (1.0.0):
+  - ChargeBack (1.1.0):
     - Atributika (= 3.1.4)
     - HexColors (~> 5.0)
     - NibDesignable (= 3.0.0)
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Atributika: 3508639d03604c956d6b0aa186de964d2c1ff6c1
-  ChargeBack: 6e0c9d130a5a395a886e09ab4df31f01913151e3
+  ChargeBack: 34e4f8cd48251c0c3a4234c488e90e562dc4393a
   HexColors: d642e696de77aa919584012e80bf62a4b099cee1
   NibDesignable: 6ccf1e54135cb05be0a78f803b9a8d78125a7d6d
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e

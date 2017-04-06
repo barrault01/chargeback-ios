@@ -15,7 +15,6 @@ struct ChargeBack {
     var autoblock: Bool
     var reasons: [Reason]
     var actions: [ChargeBackAPI.Actions]
-
 }
 
 struct Reason {

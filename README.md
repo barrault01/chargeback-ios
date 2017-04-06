@@ -5,6 +5,14 @@ Tested with Xcode 8.3.
 
 ChargeBack
 =============
+ 
+## Disclamer 
+ 
+The organization of the project is based on this [article](http://qualitycoding.org/rearrange-project-test-code/). 
+
+The lib files are in the Folder ChargeBack separte in 3 other folders: ChargeBackAPI (reponsible for API Request), Flow (that represent the app flow), ThirdParty (files from external part).
+
+Inside Flow and ChargeBackAPI folder the code is separate in feature componante and each feature contain all files use inside this feature including test files.
 
 ## Installation
  
