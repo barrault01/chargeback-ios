@@ -1,3 +1,10 @@
+##  1.1.1
+* Merged in features/patching_version (pull request #7) - Antoine Barrault
+* Change version number: 1.1.1 - Antoine Barrault
+* small refactoring - Antoine Barrault
+* share scheme for Demo project [skip ci] - Antoine Barrault
+* Publish pod version: 1.1.0 [ci skip] - Bitrise Bot
+
 ##  1.1.0
 * Merged in publishing (pull request #6) - Antoine Barrault
 * Change version number: 1.1.0 - Antoine Barrault
